@@ -27,7 +27,8 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      // variant: "default",
+      variant: "destructive",
       size: "default",
     },
   }

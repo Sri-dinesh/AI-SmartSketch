@@ -134,7 +134,7 @@ export default function Home() {
 const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current!;
     if (canvas) {
-        canvas.style.background = 'black';
+        canvas.style.background = '#212529';
         const ctx = canvas.getContext('2d')!;
         const { x, y } = getEventCoordinates(e);
         ctx.beginPath();
@@ -188,7 +188,7 @@ const stopDrawing = () => {
     // };
     // const stopDrawing = () => {
     //     setIsDrawing(false);
-    // };  
+    // };
 
     const runRoute = async () => {
         const canvas = canvasRef.current;
@@ -250,22 +250,23 @@ const stopDrawing = () => {
             <div className='grid grid-cols-3 gap-2'>
                 <Button
                     onClick={() => setReset(true)}
-                    className='z-20 bg-black text-white'
-                    variant='default' 
+                    className='z-20 bg-red-500 text-zinc-50 checked:bg-blue-500'
+                    variant='link'
                     color='black'
                 >
                     Reset
                 </Button>
-                <Group className='z-20'>
+                {/* <Group className='z-20 bg-slate-200 rounded-xl flex items-center w-full flex-wrap gap-2 p-1'> */}
+                <Group className='z-20 bg-slate-200 rounded-xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 p-1 hover:cursor-pointer'>
                     {SWATCHES.map((swatch) => (
                         <ColorSwatch key={swatch} color={swatch} onClick={() => setColor(swatch)} />
                     ))}
                 </Group>
                 <Button
                     onClick={runRoute}
-                    className='z-20 bg-black text-white'
-                    variant='default'
-                    color='white'
+                    className='z-20 bg-green-500 text-zinc-50'
+                    variant='link'
+                    color='black'
                 >
                     Calculate
                 </Button>
