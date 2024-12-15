@@ -25,4 +25,8 @@ export default defineConfig({
   build: {
     outDir: "dist", // Specify the output directory for the build
   },
+  server: {
+    host: '0.0.0.0',  // Allows access from any device on the network
+    port: 3000,  // Optional: set a specific port
+  },
 });
